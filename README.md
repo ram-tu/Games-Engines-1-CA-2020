@@ -7,5 +7,4 @@ For My assignment, I plan to make a procedural neon city. It will feature an inf
 My inspiration had come from a previous Games Engines assignment, and these various images
 ![A different image](https://image.freepik.com/free-vector/abstract-neon-city-background_75059-129.jpg)
 
-
-[Link to Previous Games Assignment](https://i.ytimg.com/vi/On763TdQhWg/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLDzkzAodU4AEi5eblacIeucksGFNg)](https://www.youtube.com/watch?v=On763TdQhWg&list=PL1n0B6z4e_E6GaGOHiBdPSW0QzICdGs4X&index=6)
+[![YouTube](https://i.ytimg.com/vi/On763TdQhWg/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLDzkzAodU4AEi5eblacIeucksGFNg)](https://www.youtube.com/watch?v=On763TdQhWg&list=PL1n0B6z4e_E6GaGOHiBdPSW0QzICdGs4X&index=6)
