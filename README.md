@@ -10,4 +10,4 @@ My inspiration had come from a previous Games Engines assignment, and these vari
 ![Image](https://static.turbosquid.com/Preview/2019/03/31__00_10_32/screenshot001.jpg12CFF4F8-6D74-4D89-8106-CF2084A657B9Default.jpg)
 
 Here is a link to a previous year's assignment on a neon city
-[![YouTube] Link: ](https://www.youtube.com/watch?v=On763TdQhWg&list=PL1n0B6z4e_E6GaGOHiBdPSW0QzICdGs4X&index=6)
+[Neon City - Games Engines Assignment ](https://www.youtube.com/watch?v=On763TdQhWg&list=PL1n0B6z4e_E6GaGOHiBdPSW0QzICdGs4X&index=6)
