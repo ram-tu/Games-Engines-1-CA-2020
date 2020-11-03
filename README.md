@@ -8,4 +8,4 @@ My inspiration had come from a previous Games Engines assignment, and these vari
 ![A different image](https://image.freepik.com/free-vector/abstract-neon-city-background_75059-129.jpg)
 
 
-[Link to Previous Games Assignment]](https://www.youtube.com/watch?v=On763TdQhWg&list=PL1n0B6z4e_E6GaGOHiBdPSW0QzICdGs4X&index=6)
+[Link to Previous Games Assignment](https://i.ytimg.com/vi/On763TdQhWg/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLDzkzAodU4AEi5eblacIeucksGFNg)](https://www.youtube.com/watch?v=On763TdQhWg&list=PL1n0B6z4e_E6GaGOHiBdPSW0QzICdGs4X&index=6)
