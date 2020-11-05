@@ -1,6 +1,8 @@
 # Games Engines 1 CA-2020
 Assignment for Games Engines 1
-
+Reda Ali Mohammed 
+C17456666 
+DT228 Bsc in Computer Science 
 
 For My assignment, I plan to make a procedural neon city. It will feature an infinite space, with buildings, hover cars moving along the roads, shooting starts and sunsets in the sky, lights and if possible pedestrians. I will hopefully make this a first person view, where you are controlling the character in a car, and you will be able to drive around the city, viewing its lights and gorgeous sights. The world will be procedurally generated as the player moves along the world. 
 
