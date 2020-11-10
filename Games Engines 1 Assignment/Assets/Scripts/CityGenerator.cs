@@ -47,7 +47,7 @@ public class CityGenerator : MonoBehaviour
                     mapGrid[w, z] = -2;
             }
 
-            z += Random.Range(2, 20);
+            z += Random.Range(3, 10);
             if (z >= height) break;
         }
 
@@ -64,7 +64,7 @@ public class CityGenerator : MonoBehaviour
                 if (noise < -2)
                     Instantiate(crossRoad, pos, Quaternion.identity);
                 else if (noise < -1)
-                    Instantiate(crossRoad, pos, Quaternion.identity);
+                    Instantiate(roadBack, pos, roadBack.transform.rotation);
                 else if (noise < 0)
                     Instantiate(roadFront, pos, Quaternion.identity);
                 else if (noise < 2)
