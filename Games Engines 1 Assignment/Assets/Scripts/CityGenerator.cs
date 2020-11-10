@@ -5,23 +5,24 @@ using UnityEngine;
 public class CityGenerator : MonoBehaviour
 {
     public List<GameObject> buildings = new List<GameObject>();
-    public GameObject road;
+    public GameObject roadFront,roadBack,crossRoad;
     public int width, height, buildingSpacing;
     private int[,] mapGrid;
     // Start is called before the first frame update
     void Start()
     {
-        float randomize = Random.Range(20, 100);
+        //float randomize = Random.Range(20, 100);
         mapGrid = new int[width,height];
         // generate perlin noise for city
         for (int h = 0; h < height; h++)
         {
             for (int w = 0; w < width; w++)
             {
-                mapGrid[w, h] = (int) (Mathf.PerlinNoise(w / 10.0f + randomize, h / 10.0f + randomize) * 10);
+                mapGrid[w, h] = (int) (Mathf.PerlinNoise(w / 10.0f , h / 10.0f ) * 10);
             }
         }
-        
+
+       
         // make the streets
         int x = 0;
         for (int n = 0; n < 50; n++)
@@ -35,6 +36,22 @@ public class CityGenerator : MonoBehaviour
             if(x >= width) break;
         }
         
+        int z = 0;
+        for (int n = 0; n < 10; n++)
+        {
+            for (int w = 0; w < width; w++)
+            {
+                if (mapGrid[w, z] == -1)
+                    mapGrid[w, z] = -3;
+                else
+                    mapGrid[w, z] = -2;
+            }
+
+            z += Random.Range(2, 20);
+            if (z >= height) break;
+        }
+
+        
         // make buildings
        
         for (int w = 0; w < width; w++)
@@ -44,8 +61,12 @@ public class CityGenerator : MonoBehaviour
                 int noise = mapGrid[w, h];
                 //int noise = (int) (Mathf.PerlinNoise(w /10.0f + randomize, h /10.0f + randomize) * 10);
                 Vector3 pos = new Vector3(w * buildingSpacing,0,h * buildingSpacing);
-                if (noise < 0)
-                    Instantiate(road, pos, Quaternion.identity);
+                if (noise < -2)
+                    Instantiate(crossRoad, pos, Quaternion.identity);
+                else if (noise < -1)
+                    Instantiate(crossRoad, pos, Quaternion.identity);
+                else if (noise < 0)
+                    Instantiate(roadFront, pos, Quaternion.identity);
                 else if (noise < 2)
                     Instantiate(buildings[0], pos, Quaternion.identity);
                 else if (noise < 4)

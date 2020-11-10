@@ -876,8 +876,13 @@ MonoBehaviour:
   - {fileID: 4402210302037496551, guid: cf1a5add4ce1ca449a6396d7df3a7a7d, type: 3}
   - {fileID: 2203492908854374930, guid: d78f7fcf2cb0d704daa180fa68eefc64, type: 3}
   - {fileID: 8755409458563541811, guid: 55eba521f4d36414a88b5f97f8725047, type: 3}
-  width: 15
-  height: 15
+  roadFront: {fileID: 573162903517893794, guid: c22914a9facf0754988070aec3c56ada,
+    type: 3}
+  roadBack: {fileID: 573162903517893794, guid: c22914a9facf0754988070aec3c56ada, type: 3}
+  crossRoad: {fileID: 6635000387726003243, guid: 57ec7b821ac9dbc489754728b3783b51,
+    type: 3}
+  width: 20
+  height: 20
   buildingSpacing: 20
 --- !u!1 &1994971329
 GameObject:
