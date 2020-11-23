@@ -62,11 +62,11 @@ public class CityGenerator : MonoBehaviour
                 //int noise = (int) (Mathf.PerlinNoise(w /10.0f + randomize, h /10.0f + randomize) * 10);
                 Vector3 pos = new Vector3(w * buildingSpacing,0,h * buildingSpacing);
                 if (noise < -2)
-                    Instantiate(crossRoad, pos, Quaternion.identity);
+                    Instantiate(crossRoad, new Vector3(pos.x,-0.499f,pos.z), Quaternion.identity);
                 else if (noise < -1)
-                    Instantiate(roadBack, pos, roadBack.transform.rotation);
+                    Instantiate(roadBack, new Vector3(pos.x,-0.499f,pos.z), roadBack.transform.rotation);
                 else if (noise < 0)
-                    Instantiate(roadFront, pos, Quaternion.identity);
+                    Instantiate(roadFront, new Vector3(pos.x,-0.499f,pos.z), Quaternion.identity);
                 else if (noise < 2)
                     Instantiate(buildings[0], pos, Quaternion.identity);
                 else if (noise < 4)
