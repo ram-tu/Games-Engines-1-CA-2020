@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="AICars.cs" t="Include" />
+          <e p="BoidFlock.cs" t="Include" />
           <e p="CameraMovement.cs" t="Include" />
           <e p="CarMovement.cs" t="Include" />
           <e p="CityGenerator.cs" t="Include" />
