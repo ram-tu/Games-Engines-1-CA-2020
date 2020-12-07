@@ -10,13 +10,16 @@ public class CreateBoids : MonoBehaviour
 
     public static List<GameObject> boids;
 
-    public static int area;
+    public int area;
 
+
+    public static int chosenArea;
     public static Vector3 goal;
     public GameObject target;
     // Start is called before the first frame update
     void Start()
     {
+        chosenArea = area;
         boids = new List<GameObject>();
         for (int i = 0; i < numBoids; i++)
         {
@@ -30,9 +33,10 @@ public class CreateBoids : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Random.Range(0, 1000) < 50)
+        if (Random.Range(0, 10000) < 50)
         {
             goal = new Vector3(Random.Range(-area,area),Random.Range(-area,area),Random.Range(-area,area));
+            Debug.Log(goal);
             target.transform.position = goal;
         }
     }

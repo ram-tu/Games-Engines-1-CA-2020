@@ -22,7 +22,7 @@ public class BoidFlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, Vector3.zero) >= CreateBoids.area)
+        if (Vector3.Distance(transform.position, Vector3.zero) >= CreateBoids.chosenArea)
             turn = true;
         else
         {
