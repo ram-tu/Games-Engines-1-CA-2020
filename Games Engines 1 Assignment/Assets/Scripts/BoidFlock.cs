@@ -10,7 +10,7 @@ public class BoidFlock : MonoBehaviour
     private Vector3 heading,pos;
     
     public float neighbours;
-    private float averageSpeed = 0;
+    
 
     private bool turn = false;
     // Start is called before the first frame update
@@ -51,7 +51,7 @@ public class BoidFlock : MonoBehaviour
 
         Vector3 centre = Vector3.zero;
         Vector3 avoid = Vector3.zero;
-
+        float averageSpeed = 0.1f;
         Vector3 goal = CreateBoids.goal;
         float distance;
         int groupSize = 0;

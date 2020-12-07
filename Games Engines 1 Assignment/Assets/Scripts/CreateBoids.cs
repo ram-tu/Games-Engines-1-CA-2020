@@ -36,6 +36,7 @@ public class CreateBoids : MonoBehaviour
         if (Random.Range(0, 10000) < 50)
         {
             goal = new Vector3(Random.Range(-area,area),Random.Range(-area,area),Random.Range(-area,area));
+            goal = transform.TransformPoint(goal);
             Debug.Log(goal);
             target.transform.position = goal;
         }

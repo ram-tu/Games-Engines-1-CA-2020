@@ -4830,6 +4830,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7bf800af6099b74fab91363d225febc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  rotationSpeed: 20
+  speed: 0.2
+  rotationSpeed: 4
   neighbours: 3
