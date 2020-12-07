@@ -39,6 +39,13 @@ public class CreateBoids : MonoBehaviour
             goal = transform.TransformPoint(goal);
             Debug.Log(goal);
             target.transform.position = goal;
+            
         }
     }
+
+    public static Vector3 sendGoal()
+    {
+        return goal;
+    }
+    
 }
