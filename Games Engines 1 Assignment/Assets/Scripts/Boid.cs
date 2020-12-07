@@ -12,9 +12,13 @@ public class Boid : MonoBehaviour
 
     public Transform target;
 
-   
+    float angle, radius = 10;
+    float angleSpeed = 2;
+    float radialSpeed = 5f;
+    
     public float groupSpacing;
-
+    public float rotationSpeed;
+    private float timeCounter = 0;
     public void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
@@ -52,9 +56,29 @@ public class Boid : MonoBehaviour
         if (velocity.magnitude > 0)
         {
             transform.forward = velocity;
-            transform.position += velocity * Time.deltaTime;
+            //transform.position += velocity * Time.deltaTime;
+            angle += Time.deltaTime * angleSpeed;
+            radius -= Time.deltaTime * radialSpeed;
+ 
+            float x = radius * Mathf.Cos(Mathf.Deg2Rad*angle);
+            float z = radius * Mathf.Sin(Mathf.Deg2Rad*angle);
+            float y = transform.position.y;
+ 
+            transform.position = new Vector3(x, y, z);
+
         }
-        foreach (GameObject boid in boids)
+        
+        /*timeCounter += Time.deltaTime; 
+        
+        var xPos = Mathf.Sin(Time.time * timeCounter) ;
+        var yPos = Mathf.Cos(Time.time * timeCounter);
+        transform.position = new Vector3(xPos,yPos,velocity.z);*/
+         
+        
+ 
+        
+       
+       /* foreach (GameObject boid in boids)
         {
             if (boid != this.gameObject)
             {
@@ -68,6 +92,13 @@ public class Boid : MonoBehaviour
                 }
             }
         }
+     
+        Vector3 direction =  avoid - transform.position;
+        if (direction != Vector3.zero)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(direction),rotationSpeed * Time.deltaTime);
+        }*/
+        
     }
   
 }
