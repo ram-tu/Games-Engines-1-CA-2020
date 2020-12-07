@@ -16,6 +16,7 @@ public class CreateBoids : MonoBehaviour
     public static int chosenArea;
     public static Vector3 goal;
     public GameObject target;
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3096001136167195491}
   - component: {fileID: 3096001136167195490}
   - component: {fileID: 3096001136167195489}
-  - component: {fileID: 3002437615647810585}
+  - component: {fileID: 6812416155640198465}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -4818,7 +4818,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &3002437615647810585
+--- !u!114 &6812416155640198465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4827,9 +4827,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3096001136167195488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7bf800af6099b74fab91363d225febc, type: 3}
+  m_Script: {fileID: 11500000, guid: 0827689f7275f594fa5cef46e0aa81f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
-  rotationSpeed: 4
-  neighbours: 3
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
+  force: {x: 0, y: 0, z: 0}
+  mass: 1
+  max: 5
+  target: {fileID: 5645166203890741197, guid: 4ceb0d122a4cf8b43be3eda6250ae7f1, type: 3}
+  groupSpacing: 2
