@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class BoidFlock : MonoBehaviour
@@ -7,9 +8,11 @@ public class BoidFlock : MonoBehaviour
     public float speed,rotationSpeed;
 
     private Vector3 heading,pos;
-
+    
     public float neighbours;
     private float averageSpeed = 0;
+
+    private bool turn = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +22,25 @@ public class BoidFlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Vector3.Distance(transform.position, Vector3.zero) >= CreateBoids.area)
+            turn = true;
+        else
+        {
+            turn = false;
+        }
+
+        if (turn)
+        {
+            Vector3 direction = (Vector3.zero) - transform.position;
+            transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(direction),rotationSpeed * Time.deltaTime);
+        }
+        else
+        {
+            if (Random.Range(0, 5) < 1)
+                Flock();
+        }
         transform.Translate(0,0,speed * Time.deltaTime);
-        if (Random.Range(0, 5) < 1)
-            Flock();
+        
         
     }
 
