@@ -13,9 +13,11 @@ public class Boid : MonoBehaviour
     public Transform target;
 
     float angle, radius = 10;
-    float angleSpeed = 2;
+    public float Speed = 2;
     float radialSpeed = 5f;
-    
+
+    public float height;
+    public float width;
     public float groupSpacing;
     public float rotationSpeed;
     private float timeCounter = 0;
@@ -56,23 +58,27 @@ public class Boid : MonoBehaviour
         if (velocity.magnitude > 0)
         {
             transform.forward = velocity;
+            timeCounter += Time.deltaTime * Speed; 
+        
+            var xPos = Mathf.Sin(timeCounter) * height ;
+            var yPos = Mathf.Cos(timeCounter) * width;
+            transform.Translate(0,0,Speed * Time.deltaTime);
+            transform.position = new Vector3(xPos,yPos,transform.position.z);
+            
+            //transform.position = new Vector3(xPos,yPos,);
             //transform.position += velocity * Time.deltaTime;
-            angle += Time.deltaTime * angleSpeed;
+           /* angle += Time.deltaTime * angleSpeed;
             radius -= Time.deltaTime * radialSpeed;
  
             float x = radius * Mathf.Cos(Mathf.Deg2Rad*angle);
             float z = radius * Mathf.Sin(Mathf.Deg2Rad*angle);
             float y = transform.position.y;
  
-            transform.position = new Vector3(x, y, z);
+            transform.position = new Vector3(x, y, z);*/
 
         }
         
-        /*timeCounter += Time.deltaTime; 
         
-        var xPos = Mathf.Sin(Time.time * timeCounter) ;
-        var yPos = Mathf.Cos(Time.time * timeCounter);
-        transform.position = new Vector3(xPos,yPos,velocity.z);*/
          
         
  

@@ -24,9 +24,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sphere.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sphere.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boid.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/BuiltinAssemblies.stamp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/03ea47-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/03ea47-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/df48d8-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/df48d8-mainStage.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +99,7 @@
       <workItem from="1605023227220" duration="3250000" />
       <workItem from="1606159818931" duration="2809000" />
       <workItem from="1607285226134" duration="7080000" />
-      <workItem from="1607365345810" duration="7099000" />
+      <workItem from="1607365345810" duration="8410000" />
     </task>
     <servers />
   </component>

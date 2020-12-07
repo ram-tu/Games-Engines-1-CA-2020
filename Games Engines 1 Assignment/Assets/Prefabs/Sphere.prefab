@@ -4836,5 +4836,8 @@ MonoBehaviour:
   mass: 1
   max: 5
   target: {fileID: 5645166203890741197, guid: 4ceb0d122a4cf8b43be3eda6250ae7f1, type: 3}
+  Speed: 5
+  height: 3
+  width: 3
   groupSpacing: 2
   rotationSpeed: 2
