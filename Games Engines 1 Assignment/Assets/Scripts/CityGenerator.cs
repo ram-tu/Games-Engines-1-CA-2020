@@ -81,7 +81,7 @@ public class CityGenerator : MonoBehaviour
             {
                 int noise = mapGrid[w, h];
                 //int noise = (int) (Mathf.PerlinNoise(w /10.0f + randomize, h /10.0f + randomize) * 10);
-                Vector3 pos = new Vector3(/*player.transform.position.x+*/(w * buildingSpacing),0,/*player.transform.position.z +*/ h * buildingSpacing);
+                Vector3 pos = new Vector3(player.transform.position.x+(w * buildingSpacing),0,player.transform.position.z + h * buildingSpacing);
                 if (noise < -2)
                 {
                     GameObject crossRoads = Instantiate(crossRoad, new Vector3(pos.x,-0.499f,pos.z), Quaternion.identity).gameObject;
@@ -123,14 +123,18 @@ public class CityGenerator : MonoBehaviour
                     cityObjects.Add(building);
                 }
                 
+                Debug.Log("position is " + pos);
+                Debug.Log("player is at " + player.transform.position.x + "width is at " + w);
+                
             }
         }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        int xMove = (int) (player.transform.position.x - startPos.x);
+        /*int xMove = (int) (player.transform.position.x - startPos.x);
         int zMove = (int) (player.transform.position.z - startPos.z);
 
         if (Mathf.Abs(xMove) >= area || Mathf.Abs(zMove) >= area)
