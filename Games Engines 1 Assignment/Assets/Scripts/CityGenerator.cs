@@ -11,9 +11,14 @@ public class CityGenerator : MonoBehaviour
     public GameObject player;
     private int area;
     private Vector3 startPos;
+    private float updateTime;
+
+    private List<GameObject> cityObjects;
     // Start is called before the first frame update
     void Start()
     {
+        updateTime = Time.realtimeSinceStartup;
+        cityObjects = new List<GameObject>();
         area = width * height;
         startPos = Vector3.zero;
         transform.position = startPos;
@@ -76,23 +81,48 @@ public class CityGenerator : MonoBehaviour
             {
                 int noise = mapGrid[w, h];
                 //int noise = (int) (Mathf.PerlinNoise(w /10.0f + randomize, h /10.0f + randomize) * 10);
-                Vector3 pos = new Vector3(w * buildingSpacing,0,h * buildingSpacing);
+                Vector3 pos = new Vector3(/*player.transform.position.x+*/(w * buildingSpacing),0,/*player.transform.position.z +*/ h * buildingSpacing);
                 if (noise < -2)
-                    Instantiate(crossRoad, new Vector3(pos.x,-0.499f,pos.z), Quaternion.identity);
+                {
+                    GameObject crossRoads = Instantiate(crossRoad, new Vector3(pos.x,-0.499f,pos.z), Quaternion.identity).gameObject;
+                    cityObjects.Add(crossRoads);
+                }
                 else if (noise < -1)
-                    Instantiate(roadBack, new Vector3(pos.x,-0.499f,pos.z), roadBack.transform.rotation);
+                {
+                    GameObject roadbacks = Instantiate(roadBack, new Vector3(pos.x,-0.499f,pos.z), roadBack.transform.rotation).gameObject;
+                    cityObjects.Add(roadbacks);
+                }
                 else if (noise < 0)
-                    Instantiate(roadFront, new Vector3(pos.x,-0.499f,pos.z), Quaternion.identity);
+                {
+                    GameObject roadfronts = Instantiate(roadFront, new Vector3(pos.x,-0.499f,pos.z), Quaternion.identity).gameObject;
+                    cityObjects.Add(roadfronts);
+                }
                 else if (noise < 2)
-                    Instantiate(buildings[0], pos, Quaternion.identity);
+                {
+                    GameObject building = Instantiate(buildings[0], pos, Quaternion.identity).gameObject;
+                    cityObjects.Add(building);
+                }
                 else if (noise < 4)
-                    Instantiate(buildings[1], pos, Quaternion.identity);
+                {
+                    GameObject building = Instantiate(buildings[1], pos, Quaternion.identity).gameObject;
+                    cityObjects.Add(building);
+                }
                 else if (noise < 6)
-                    Instantiate(buildings[2], pos, Quaternion.identity);
+                {
+                    GameObject building = Instantiate(buildings[2], pos, Quaternion.identity).gameObject;
+                    cityObjects.Add(building);
+                }
                 else if (noise < 8)
-                    Instantiate(buildings[3], pos, Quaternion.identity);
+                {
+                    GameObject building = Instantiate(buildings[3], pos, Quaternion.identity).gameObject;
+                    cityObjects.Add(building);
+                }
                 else if (noise < 10)
-                    Instantiate(buildings[4], pos, Quaternion.identity);
+                {
+                    GameObject building = Instantiate(buildings[4], pos, Quaternion.identity).gameObject;
+                    cityObjects.Add(building);
+                }
+                
             }
         }
     }
@@ -105,13 +135,16 @@ public class CityGenerator : MonoBehaviour
 
         if (Mathf.Abs(xMove) >= area || Mathf.Abs(zMove) >= area)
         {
-            int playerX = (int) (Mathf.Floor(player.transform.position.x / area) * area);
-            int playerZ = (int) (Mathf.Floor(player.transform.position.z / area) * area);
+            //int playerX = (int) (Mathf.Floor(player.transform.position.x / area) * area);
+            //int playerZ = (int) (Mathf.Floor(player.transform.position.z / area) * area);
 
-            CreateStreet();
-            CreateBuilding();
+            //CreateStreet();
+            //CreateBuilding();
         }
-        
-        
+
+        /*foreach (GameObject cityobj in cityObjects){}
+        {
+            
+        }*/
     }
 }
