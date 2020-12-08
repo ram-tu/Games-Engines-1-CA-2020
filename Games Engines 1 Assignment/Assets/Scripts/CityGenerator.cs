@@ -127,10 +127,14 @@ public class CityGenerator : MonoBehaviour
                     GameObject building = Instantiate(buildings[4], pos, Quaternion.identity).gameObject;
                     cityObjects.Add(building);
                 }
+
+                j++;
                 
-              Debug.Log(pos);
+                Debug.Log(pos);
                 
             }
+
+            i++;
         }
         
     }
