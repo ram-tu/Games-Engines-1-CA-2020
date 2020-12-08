@@ -8,9 +8,15 @@ public class CityGenerator : MonoBehaviour
     public GameObject roadFront,roadBack,crossRoad;
     public int width, height, buildingSpacing;
     private int[,] mapGrid;
+    public GameObject player;
+    private int area;
+    private Vector3 startPos;
     // Start is called before the first frame update
     void Start()
     {
+        area = width * height;
+        startPos = Vector3.zero;
+        transform.position = startPos;
         //float randomize = Random.Range(20, 100);
         mapGrid = new int[width,height];
         // generate perlin noise for city
@@ -24,6 +30,15 @@ public class CityGenerator : MonoBehaviour
 
        
         // make the streets
+        CreateStreet();
+        
+        // make buildings
+        CreateBuilding();
+
+    }
+
+    void CreateStreet()
+    {
         int x = 0;
         for (int n = 0; n < 50; n++)
         {
@@ -50,10 +65,11 @@ public class CityGenerator : MonoBehaviour
             z += Random.Range(3, 10);
             if (z >= height) break;
         }
+    }
 
-        
-        // make buildings
-       
+    void CreateBuilding()
+    {
+               
         for (int w = 0; w < width; w++)
         {
             for (int h = 0; h < height; h++)
@@ -84,6 +100,18 @@ public class CityGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int xMove = (int) (player.transform.position.x - startPos.x);
+        int zMove = (int) (player.transform.position.z - startPos.z);
+
+        if (Mathf.Abs(xMove) >= area || Mathf.Abs(zMove) >= area)
+        {
+            int playerX = (int) (Mathf.Floor(player.transform.position.x / area) * area);
+            int playerZ = (int) (Mathf.Floor(player.transform.position.z / area) * area);
+
+            CreateStreet();
+            CreateBuilding();
+        }
+        
         
     }
 }
