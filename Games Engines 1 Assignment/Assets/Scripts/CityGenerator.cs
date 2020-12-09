@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.WSA;
 
 public class CityGenerator : MonoBehaviour
 {
@@ -15,8 +17,9 @@ public class CityGenerator : MonoBehaviour
 
     private List<GameObject> cityObjects;
     int halfWidth;
-
+    private Dictionary<string,CityObj> cityObj = new Dictionary<string, CityObj>();
     private int halfHeight;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -89,43 +92,89 @@ public class CityGenerator : MonoBehaviour
                 Vector3 pos = new Vector3(player.transform.position.x+(w * buildingSpacing),0,player.transform.position.z + (h * buildingSpacing));
                 if (noise < -2)
                 {
+                    string objName = "Cross Road " + ((int) (pos.x)).ToString() + " " + ((int) (pos.z)).ToString();
                     GameObject crossRoads = Instantiate(crossRoad, new Vector3(pos.x,-0.499f,pos.z), Quaternion.identity).gameObject;
+                    crossRoads.name = objName;
+                    CityObj obj = new CityObj(updateTime,crossRoads);
+                    cityObj[objName] = obj;
                     cityObjects.Add(crossRoads);
+                    cityObj.Add(objName,obj);
+                    
+
                 }
                 else if (noise < -1)
                 {
+                    string objName = "Road back " + ((int) (pos.x)).ToString() + " " + ((int) (pos.z)).ToString();
                     GameObject roadbacks = Instantiate(roadBack, new Vector3(pos.x,-0.499f,pos.z), roadBack.transform.rotation).gameObject;
+                    roadbacks.name = objName;
+                    CityObj obj = new CityObj(updateTime,roadbacks);
+                    cityObj[objName] = obj;
                     cityObjects.Add(roadbacks);
+                    cityObj.Add(objName,obj);
                 }
                 else if (noise < 0)
                 {
+                    string objName = "Road Front " + ((int) (pos.x)).ToString() + " " + ((int) (pos.z)).ToString();
                     GameObject roadfronts = Instantiate(roadFront, new Vector3(pos.x,-0.499f,pos.z), Quaternion.identity).gameObject;
                     cityObjects.Add(roadfronts);
+                    roadfronts.name = objName;
+                    CityObj obj = new CityObj(updateTime,roadfronts);
+                    cityObj[objName] = obj;
+                    cityObj.Add(objName,obj);
                 }
                 else if (noise < 2)
                 {
+                    string objName = "Building 1 " + ((int) (pos.x)).ToString() + " " + ((int) (pos.z)).ToString();
                     GameObject building = Instantiate(buildings[0], pos, Quaternion.identity).gameObject;
                     cityObjects.Add(building);
+                    building.name = objName;
+                    CityObj obj = new CityObj(updateTime,building);
+                    cityObj[objName] = obj;
+                    cityObj.Add(objName,obj);
                 }
                 else if (noise < 4)
                 {
+                    string objName = "Building 2 " + ((int) (pos.x)).ToString() + " " + ((int) (pos.z)).ToString();
                     GameObject building = Instantiate(buildings[1], pos, Quaternion.identity).gameObject;
                     cityObjects.Add(building);
+                    cityObjects.Add(building);
+                    building.name = objName;
+                    CityObj obj = new CityObj(updateTime,building);
+                    cityObj[objName] = obj;
+                    cityObj.Add(objName,obj);
                 }
                 else if (noise < 6)
                 {
+                    string objName = "Building 3 " + ((int) (pos.x)).ToString() + " " + ((int) (pos.z)).ToString();
                     GameObject building = Instantiate(buildings[2], pos, Quaternion.identity).gameObject;
                     cityObjects.Add(building);
+                    cityObjects.Add(building);
+                    building.name = objName;
+                    CityObj obj = new CityObj(updateTime,building);
+                    cityObj[objName] = obj;
+                    cityObj.Add(objName,obj);
                 }
                 else if (noise < 8)
                 {
+                    string objName = "Building 4 " + ((int) (pos.x)).ToString() + " " + ((int) (pos.z)).ToString();
                     GameObject building = Instantiate(buildings[3], pos, Quaternion.identity).gameObject;
                     cityObjects.Add(building);
+                    cityObjects.Add(building);
+                    building.name = objName;
+                    CityObj obj = new CityObj(updateTime,building);
+                    cityObj[objName] = obj;
+                    cityObj.Add(objName,obj);
                 }
                 else if (noise < 10)
                 {
+                    string objName = "Building 5 " + ((int) (pos.x)).ToString() + " " + ((int) (pos.z)).ToString();
                     GameObject building = Instantiate(buildings[4], pos, Quaternion.identity).gameObject;
                     cityObjects.Add(building);
+                    cityObjects.Add(building);
+                    building.name = objName;
+                    CityObj obj = new CityObj(updateTime,building);
+                    cityObj[objName] = obj;
+                    cityObj.Add(objName,obj);
                 }
 
                 j++;
@@ -142,7 +191,7 @@ public class CityGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*int xMove = (int) (player.transform.position.x - startPos.x);
+        int xMove = (int) (player.transform.position.x - startPos.x);
         int zMove = (int) (player.transform.position.z - startPos.z);
 
         if (Mathf.Abs(xMove) >= area || Mathf.Abs(zMove) >= area)
@@ -150,13 +199,14 @@ public class CityGenerator : MonoBehaviour
             //int playerX = (int) (Mathf.Floor(player.transform.position.x / area) * area);
             //int playerZ = (int) (Mathf.Floor(player.transform.position.z / area) * area);
 
-            //CreateStreet();
-            //CreateBuilding();
+            foreach (GameObject obj in cityObjects)
+            {
+                Destroy(obj);
+            }
+            CreateStreet();
+            CreateBuilding();
         }
 
-        /*foreach (GameObject cityobj in cityObjects){}
-        {
-            
-        }*/
+       
     }
 }

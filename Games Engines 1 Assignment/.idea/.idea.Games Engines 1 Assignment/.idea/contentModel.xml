@@ -13,6 +13,7 @@
           <e p="CameraMovement.cs" t="Include" />
           <e p="CarMovement.cs" t="Include" />
           <e p="CityGenerator.cs" t="Include" />
+          <e p="CityObj.cs" t="Include" />
           <e p="CreateBoids.cs" t="Include" />
           <e p="TrafficLight.cs" t="Include" />
         </e>
