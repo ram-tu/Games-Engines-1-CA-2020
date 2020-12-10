@@ -236,7 +236,7 @@ public class CityGenerator : MonoBehaviour
 
                 List<CityObj> newObjs = new List<CityObj>();
           for (int i = 0,w = -halfWidth; w < halfWidth ; w++)
-        {
+          {
             for (int j = 0,h = -halfHeight; h < halfHeight; h++)
             {
                 int choice = 100;
