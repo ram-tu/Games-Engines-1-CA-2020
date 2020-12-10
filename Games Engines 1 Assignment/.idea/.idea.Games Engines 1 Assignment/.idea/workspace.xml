@@ -20,46 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e11cdc51-f8cf-4942-a26a-266896167e07" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Games Engines 1 Assignment/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Games Engines 1 Assignment/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/buildings/medium/Materials/building1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/buildings/medium/Materials/building1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/buildings/medium/Materials/building2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/buildings/medium/Materials/building2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/buildings/medium/Materials/building3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/buildings/medium/Materials/building3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/buildings/medium/Materials/building4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/buildings/medium/Materials/building4.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/buildings/props/doors/Materials/door.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/buildings/props/doors/Materials/door.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/buildings/props/windows/Materials/windows.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/buildings/props/windows/Materials/windows.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/pavements/Materials/pavement1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/pavements/Materials/pavement1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/roads/Materials/roads.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/roads/Materials/roads.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/roads/Materials/roadsBis.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CityVoxelPack/Assets/roads/Materials/roadsBis.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Aqua.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Aqua.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Black.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Black.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Green.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/New Material 1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/New Material 1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Orange.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Pink.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Pink.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Purple.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Purple.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Shader.shadergraph" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Shader.shadergraph.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CityGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CityGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Crate - Surface Shader Scene.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Crate - Surface Shader Scene.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Ground - Logo Scene.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Ground - Logo Scene.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Ground - Surface Shader Scene.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Ground - Surface Shader Scene.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Small Crate_diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Small Crate_diffuse.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Games Engines 1 Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Games Engines 1 Assignment/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptMapper" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptMapper" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/03ea47-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/03ea47-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/df48d8-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/df48d8-mainStage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe4.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe4.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,9 +52,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TrafficLight.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BoidFlock.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreateBoids.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Boid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CityObj.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CityGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Boid.cs" />
       </list>
     </option>
   </component>
@@ -137,7 +105,7 @@
       <workItem from="1607365345810" duration="9100000" />
       <workItem from="1607451746069" duration="8849000" />
       <workItem from="1607501797704" duration="15696000" />
-      <workItem from="1607592944122" duration="359000" />
+      <workItem from="1607592944122" duration="2696000" />
     </task>
     <servers />
   </component>

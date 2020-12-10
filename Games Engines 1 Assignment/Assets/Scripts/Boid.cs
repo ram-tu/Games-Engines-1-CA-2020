@@ -39,18 +39,21 @@ public class Boid : MonoBehaviour
         return desired - velocity;
     }
 
-
+    private float speed;
     
     // Start is called before the first frame update
     void Start()
     {
+        speed = 5;
+        width = 4;
+        height = 7;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        force = Seek(target);
+        /*force = Seek(target);
         acceleration = force / mass;
         velocity += acceleration * Time.deltaTime;
         List<GameObject> boids = CreateBoids.boids;
@@ -75,8 +78,25 @@ public class Boid : MonoBehaviour
             float y = transform.position.y;
  
             transform.position = new Vector3(x, y, z);*/
+        
+            //transform.Translate(Vector3.forward * Speed * Time.deltaTime);
+            //float x = radius * Mathf.Cos(Mathf.Deg2Rad*angle);
+            //float z = radius * Mathf.Sin(Mathf.Deg2Rad*angle);
+            //transform.Translate(x,0,z);
 
-        }
+            speed = 5;
+            width = 4;
+            height = 7;
+
+            timeCounter = Time.deltaTime;
+            float x = radius * Mathf.Cos(timeCounter) * width;
+            float y = radius * Mathf.Sin(timeCounter) * height;
+            
+            transform.position = new Vector3(x,y,0);
+            //ransform.Translate(x,y,0);
+
+
+    }
         
         
          
@@ -103,8 +123,8 @@ public class Boid : MonoBehaviour
         if (direction != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(direction),rotationSpeed * Time.deltaTime);
-        }*/
+        }
         
-    }
+    }*/
   
 }
