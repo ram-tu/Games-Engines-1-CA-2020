@@ -20,6 +20,8 @@ public class CityGenerator : MonoBehaviour
     private Dictionary<string,CityObj> cityObj = new Dictionary<string, CityObj>();
     private int halfHeight;
     Queue<GameObject> oldObjects = new Queue<GameObject>();
+
+    public GameObject forceField;
     
     // Start is called before the first frame update
     void Start()
@@ -37,13 +39,15 @@ public class CityGenerator : MonoBehaviour
         // generate perlin noise for city
         
 
-       
+        GameObject force = Instantiate(forceField, player.transform.position, Quaternion.identity);
+        force.transform.localScale = new Vector3(100,100,100);
         // make the streets
         CreateStreet();
         StartCoroutine(GenerateCity());
+        
 
         // make buildings
-       // CreateBuilding();
+        // CreateBuilding();
 
     }
 
