@@ -35,13 +35,7 @@ public class CityGenerator : MonoBehaviour
         //float randomize = Random.Range(20, 100);
         mapGrid = new int[width,height];
         // generate perlin noise for city
-        for (int h = 0; h < height; h++)
-        {
-            for (int w = 0; w < width; w++)
-            {
-                mapGrid[w, h] = (int) (Mathf.PerlinNoise(w / 10.0f , h / 10.0f ) * 10);
-            }
-        }
+        
 
        
         // make the streets
@@ -55,6 +49,13 @@ public class CityGenerator : MonoBehaviour
 
     void CreateStreet()
     {
+        for (int h = 0; h < height; h++)
+        {
+            for (int w = 0; w < width; w++)
+            {
+                mapGrid[w, h] = (int) (Mathf.PerlinNoise(w / 10.0f , h / 10.0f ) * 10);
+            }
+        }
         int x = 0;
         for (int n = 0; n < 50; n++)
         {
@@ -233,16 +234,16 @@ public class CityGenerator : MonoBehaviour
                 float updateTime = Time.realtimeSinceStartup;
                 int playerX = (int) (Mathf.Floor(player.transform.position.x / area) * area);
                 int playerZ = (int) (Mathf.Floor(player.transform.position.z / area) * area);
-
-                List<CityObj> newObjs = new List<CityObj>();
-          for (int i = 0,w = -halfWidth; w < halfWidth ; w++)
-          {
-            for (int j = 0,h = -halfHeight; h < halfHeight; h++)
+                
+                CreateStreet();
+            for (int i = 0,w = -halfWidth; w < halfWidth ; w++)
             {
+             for (int j = 0,h = -halfHeight; h < halfHeight; h++)
+             {
                 int choice = 100;
                 int noise = mapGrid[i, j];
                 //int noise = (int) (Mathf.PerlinNoise(w /10.0f + randomize, h /10.0f + randomize) * 10);
-                Vector3 pos = new Vector3(player.transform.position.x+(w * buildingSpacing),0,player.transform.position.z + (h * buildingSpacing));
+                Vector3 pos = new Vector3(playerX+(w * buildingSpacing),0, playerZ+(h * buildingSpacing));
                 if (noise < -2)
                 {    
                     string tilename = "Road" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
@@ -250,7 +251,7 @@ public class CityGenerator : MonoBehaviour
                     crossRoads.name = tilename;
                     CityObj obj = new CityObj(updateTime,crossRoads,crossRoads.transform.position,Quaternion.identity);
                     cityObjects.Add(crossRoads);
-                    cityObj.Add(tilename,obj);
+                    //cityObj.Add(tilename,obj);
                     if (!cityObj.ContainsKey(tilename))
                     {
                         cityObj.Add(tilename,obj);
@@ -353,7 +354,7 @@ public class CityGenerator : MonoBehaviour
             yield return null;
             //determine how far the player has moved since last terrain update
              xMove = (int)(player.transform.position.x - startPos.x);
-            zMove = (int)(player.transform.position.z - startPos.z);
+             zMove = (int)(player.transform.position.z - startPos.z);
             
         }
     }
