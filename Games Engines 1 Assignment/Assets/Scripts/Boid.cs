@@ -13,7 +13,7 @@ public class Boid : MonoBehaviour
     public float mass = 1.0f;
     public float max = 5;
 
-    public Transform target;
+    public GameObject target;
 
     public int area;
     public int timeChange;
@@ -54,10 +54,10 @@ public class Boid : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("changing");
             target.transform.position = transform.TransformPoint(new Vector3(Random.Range(-area,area),0,Random.Range(-area,area)));
             GetComponent<Renderer>().material.color = 
                 Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1);
+            //GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
             //main.startColor = Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1);
             yield return new WaitForSeconds(timeChange);
         }
@@ -65,7 +65,7 @@ public class Boid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        force = Seek(target);
+        force = Seek(target.transform);
         acceleration = force / mass;
         velocity += acceleration * Time.deltaTime;
        

@@ -27,6 +27,9 @@ public class CreateBoids : MonoBehaviour
             Vector3 pos = new Vector3(Random.Range(-area,area),Random.Range(-area,area),Random.Range(-area,area));
             pos = transform.TransformPoint(pos);
             GameObject newBoid = Instantiate(boid, pos, Quaternion.identity).gameObject;
+            GameObject targetMade = Instantiate(target, pos, Quaternion.identity).gameObject;
+            newBoid.GetComponent<Boid>().target = targetMade;
+            newBoid.transform.parent = transform;
             boids.Add(newBoid);
         }
     }
@@ -34,14 +37,14 @@ public class CreateBoids : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Random.Range(0, 10000) < 50)
+        /*if (Random.Range(0, 10000) < 50)
         {
             goal = new Vector3(Random.Range(-area,area),Random.Range(-area,area),Random.Range(-area,area));
             goal = transform.TransformPoint(goal);
             Debug.Log(goal);
             target.transform.position = goal;
             
-        }
+        }*/
     }
 
     public static Vector3 sendGoal()
