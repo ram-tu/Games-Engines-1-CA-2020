@@ -31,7 +31,7 @@ public class CityGenerator : MonoBehaviour
         halfWidth = width / 2;
         updateTime = Time.realtimeSinceStartup;
         cityObjects = new List<GameObject>();
-        area = width * height;
+        area = width + buildingSpacing;
         startPos = Vector3.zero;
         transform.position = startPos;
         //float randomize = Random.Range(20, 100);
