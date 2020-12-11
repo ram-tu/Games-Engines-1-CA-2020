@@ -18,6 +18,7 @@ public class Boid : MonoBehaviour
     public int area;
     public int timeChange;
     private ParticleSystem ps;
+    public int rotationSpeed;
     public void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
@@ -73,6 +74,7 @@ public class Boid : MonoBehaviour
         {
             transform.position += velocity * Time.deltaTime;
         }
+        transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
         ParticleSystem.ColorOverLifetimeModule colouring = ps.colorOverLifetime;
         colouring.color = Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1); 
 
