@@ -6,6 +6,7 @@
     <e p="C:\Users\35389\Documents\GitHub\Games-Engines-1-CA-2020\Games Engines 1 Assignment" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Rotate.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AICars.cs" t="Include" />
           <e p="Boid.cs" t="Include" />

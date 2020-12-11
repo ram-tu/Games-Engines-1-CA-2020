@@ -181,7 +181,7 @@ public class CityGenerator : MonoBehaviour
 
                 j++;
                 
-                Debug.Log(pos);
+                
                 
             }
 
@@ -329,8 +329,7 @@ public class CityGenerator : MonoBehaviour
                
 
                 j++;
-                
-                Debug.Log(pos);
+             
                 
             }
 
