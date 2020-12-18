@@ -37,6 +37,15 @@ public class TrafficLight : MonoBehaviour
     {
         while (true)
         {
+            
+            if (startingLight % 3 == 0)
+            {
+                GetComponent<BoxCollider>().enabled = true;
+            }
+            else
+            {
+                GetComponent<BoxCollider>().enabled = false;
+            }
             lights[(startingLight) % 3].GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
             lights[(startingLight + 1) % 3].GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
             startingLight++;

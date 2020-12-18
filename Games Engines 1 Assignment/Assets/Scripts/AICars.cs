@@ -6,7 +6,7 @@ using UnityEngine;
 public class AICars : MonoBehaviour
 {
     public int speed;
-
+    public bool front;
     private int currentSpeed;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,24 @@ public class AICars : MonoBehaviour
         {
             speed = 0;
         }
+
+        if (front)
+        {
+            if (other.gameObject.CompareTag("Front"))
+            {
+                speed = 0;
+            }
+        }
+
+        if (!front)
+        {
+            if(other.gameObject.CompareTag("Side")){}
+
+            {
+                speed = 0;
+            }
+        }
+        
     }
 
     private void OnTriggerExit(Collider other)
@@ -33,6 +51,22 @@ public class AICars : MonoBehaviour
         if (other.gameObject.CompareTag("Car"))
         {
             speed = currentSpeed;
+        }
+        if (front)
+        {
+            if (other.gameObject.CompareTag("Front"))
+            {
+                speed = currentSpeed;
+            }
+        }
+
+        if (!front)
+        {
+            if(other.gameObject.CompareTag("Side")){}
+
+            {
+                speed = currentSpeed;
+            }
         }
     }
 }

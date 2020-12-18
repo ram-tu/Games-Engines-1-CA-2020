@@ -221,20 +221,20 @@ public class CityGenerator : MonoBehaviour
              i++;
             }
           
-            Debug.Log("Total Amount of buildings is " + cityObj.Count);    
+              
             Dictionary<string,CityObj>newObjects = new Dictionary<string, CityObj>();
             foreach (CityObj obj in cityObj.Values)
             {
                 if (obj.creationTime != updateTime)
                 {
-                    Debug.Log("Adding OLD : " + obj.prefab.name);
+                    
                     oldObjects.Add(obj);
                     obj.prefab.AddComponent<Renderer>();
                     obj.prefab.GetComponent<Renderer>().material.color = Color.green; 
                 }
                 else
                 {
-                    Debug.Log("Adding NEW : " + obj.prefab.name);
+                    
                     newObjects[obj.prefab.name] = obj;
                 }
             }
