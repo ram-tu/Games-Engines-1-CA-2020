@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TrafficLight : MonoBehaviour
 {
+    
     private GameObject[] lights = new GameObject[3];
 
     public int timeFrame;

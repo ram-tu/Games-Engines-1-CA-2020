@@ -1265,8 +1265,8 @@ MonoBehaviour:
     type: 3}
   crossRoad: {fileID: 6635000387726003243, guid: 57ec7b821ac9dbc489754728b3783b51,
     type: 3}
-  width: 10
-  height: 10
+  width: 30
+  height: 30
   buildingSpacing: 20
   player: {fileID: 1776946983}
 --- !u!1 &1994971329

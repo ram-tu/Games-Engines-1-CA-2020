@@ -196,6 +196,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7790268828767432899, guid: 44a6eea523ea81549a5c87cba3281ecc,
+        type: 3}
+      propertyPath: startingLight
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44a6eea523ea81549a5c87cba3281ecc, type: 3}
 --- !u!4 &7082872915651589293 stripped
@@ -284,6 +289,11 @@ PrefabInstance:
     - target: {fileID: 7427028947955759386, guid: 44a6eea523ea81549a5c87cba3281ecc,
         type: 3}
       propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790268828767432899, guid: 44a6eea523ea81549a5c87cba3281ecc,
+        type: 3}
+      propertyPath: startingLight
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -395,6 +405,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Traffic Light 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7221534166594418119, guid: 44a6eea523ea81549a5c87cba3281ecc,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.9469147
+      objectReference: {fileID: 0}
+    - target: {fileID: 7221534166594418119, guid: 44a6eea523ea81549a5c87cba3281ecc,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.026542664
+      objectReference: {fileID: 0}
+    - target: {fileID: 7221534166594418119, guid: 44a6eea523ea81549a5c87cba3281ecc,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.047226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7221534166594418119, guid: 44a6eea523ea81549a5c87cba3281ecc,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.023612976
       objectReference: {fileID: 0}
     - target: {fileID: 7427028947955759386, guid: 44a6eea523ea81549a5c87cba3281ecc,
         type: 3}
