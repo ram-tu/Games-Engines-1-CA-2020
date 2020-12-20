@@ -1,5 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &1975617589209901063
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153315464023241099}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &2245618799361951145
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136054582604183144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2931042027612321877
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +240,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7436614686325832735, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.2275515
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436614686325832735, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.104803376
+      objectReference: {fileID: 0}
     - target: {fileID: 7436614686325832928, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee,
         type: 3}
       propertyPath: m_Enabled
@@ -229,8 +265,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI Car (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7994684677445717756, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7436614686325832734, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee, type: 3}
+--- !u!1 &1153315464023241099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7436614686325832929, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 8589859712851676522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1153315464023241073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7436614686325832731, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee,
@@ -339,6 +387,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7436614686325832735, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.3199189
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436614686325832735, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.19031525
+      objectReference: {fileID: 0}
     - target: {fileID: 7436614686325832928, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee,
         type: 3}
       propertyPath: m_Enabled
@@ -354,8 +412,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI Car (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7436614686325832734, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee, type: 3}
+--- !u!1 &2136054582604183144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7436614686325832929, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 8831809538011220617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2136054582604183186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7436614686325832731, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee,
