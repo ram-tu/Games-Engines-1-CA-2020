@@ -9,6 +9,8 @@ public class CarLights : MonoBehaviour
     public AICars car;
 
     public bool front;
+
+    public GameObject trafficlight;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,15 +26,31 @@ public class CarLights : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.CompareTag("Car"))
         {
             car.speed = 0;
             car.message = "another car";
         }
+        
+        if (other.gameObject.CompareTag("Front") && front)
+        {
+            if (other.gameObject.GetComponent<TrafficLight>().redlight)
+            {
+                car.speed = 0;
+                car.message = "front light";
+                trafficlight = other.gameObject;
+            }
+            else if(other.gameObject.GetComponent<TrafficLight>().redlight == false)
+            {
+                car.speed = car.currentSpeed;
+                trafficlight = null;
+            }
+           
+        }
+        
 
-   
         
     }
 
@@ -41,9 +59,6 @@ public class CarLights : MonoBehaviour
         if (other.gameObject.CompareTag("Car"))
         {
             car.speed = car.currentSpeed;
-            car.message = "car 2";
-          
         }
-
     }
 }

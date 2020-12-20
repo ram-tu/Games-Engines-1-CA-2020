@@ -9,7 +9,7 @@ public class TrafficLight : MonoBehaviour
     private GameObject[] lights = new GameObject[3];
 
     public int timeFrame;
-
+    public bool redlight;
     public int startingLight;
     // Start is called before the first frame update
     void Start()
@@ -40,11 +40,11 @@ public class TrafficLight : MonoBehaviour
             
             if (startingLight % 3 == 0)
             {
-                GetComponent<BoxCollider>().enabled = true;
+                redlight = true;
             }
             else
             {
-                GetComponent<BoxCollider>().enabled = false;
+                redlight = false;
             }
             lights[(startingLight) % 3].GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
             lights[(startingLight + 1) % 3].GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
