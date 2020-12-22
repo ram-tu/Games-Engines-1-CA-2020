@@ -32,7 +32,7 @@ public class TextScrolling : MonoBehaviour
     void Start()
     {
         textTransform = component.GetComponent<RectTransform>();
-        width = component.preferredWidth;
+        width = 6f;
         pos = textTransform.position;
 
         scrollPos = 0;
@@ -47,11 +47,11 @@ public class TextScrolling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(-scrollPos % width);
-        textTransform.position = new Vector3(-scrollPos,pos.y,pos.z);
-        if (-scrollPos % width < -240)
+        Debug.Log(scrollPos % width);
+        textTransform.localPosition = new Vector3(scrollPos,textTransform.localPosition.y,0);
+        if (scrollPos > width)
         {
-            scrollPos = -80;
+            scrollPos = -5;
         }
         scrollPos += speed * Time.deltaTime;
     }

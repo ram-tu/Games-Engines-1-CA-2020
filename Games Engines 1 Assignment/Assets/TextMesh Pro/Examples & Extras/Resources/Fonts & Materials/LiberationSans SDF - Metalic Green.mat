@@ -94,10 +94,10 @@ Material:
     m_Colors:
     - _ClipRect: {r: -10000, g: -10000, b: 10000, a: 10000}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
-    - _FaceColor: {r: 0.9339623, g: 0.066082224, b: 0.15402104, a: 1}
-    - _GlowColor: {r: 0.9811321, g: 0, b: 0.63372517, a: 0.5}
+    - _FaceColor: {r: 1, g: 0.10849059, b: 0.9800847, a: 1}
+    - _GlowColor: {r: 0, g: 0.73925984, b: 0.98039216, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 100000, a: 100000}
-    - _OutlineColor: {r: 1, g: 0.0141509175, b: 0.0141509175, a: 1}
+    - _OutlineColor: {r: 0.015686274, g: 1, b: 0.72893625, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 0.7689687, g: 1, b: 0.75000346, a: 1}
