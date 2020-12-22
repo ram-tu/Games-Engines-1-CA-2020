@@ -20,14 +20,13 @@ public class TextScrolling : MonoBehaviour
     private float scrollPos;
     
     // Start is called before the first frame update
-    void Awake()
-    {
+  
         
-        copy = Instantiate(component);
-        RectTransform copyTransform = copy.GetComponent<RectTransform>();
-        copyTransform.SetParent(textTransform);
-        copyTransform.anchorMin = new Vector2(1,0.5f);
-    }
+        //copy = Instantiate(component);
+        //RectTransform copyTransform = copy.GetComponent<RectTransform>();
+        //copyTransform.SetParent(textTransform);
+        //copyTransform.anchorMin = new Vector2(1,0.5f);
+    
 
    
     void Start()
@@ -37,12 +36,23 @@ public class TextScrolling : MonoBehaviour
         pos = textTransform.position;
 
         scrollPos = 0;
+       // copy = Instantiate(component);
+        //Destroy(copy.GetComponent<TextScrolling>());
+        //RectTransform copyTransform = copy.GetComponent<RectTransform>();
+        //copyTransform.SetParent(textTransform);
+        //copyTransform.position = new Vector3(textTransform.position.x - 20,textTransform.position.y,textTransform.position.z);
+        //copyTransform.anchorMin = new Vector2(1,0.5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        textTransform.position = new Vector3(-scrollPos % width,pos.y,pos.z);
+        Debug.Log(-scrollPos % width);
+        textTransform.position = new Vector3(-scrollPos,pos.y,pos.z);
+        if (-scrollPos % width < -240)
+        {
+            scrollPos = -80;
+        }
         scrollPos += speed * Time.deltaTime;
     }
 }
