@@ -19,6 +19,7 @@
           <e p="CityGenerator.cs" t="Include" />
           <e p="CityObj.cs" t="Include" />
           <e p="CreateBoids.cs" t="Include" />
+          <e p="TextMovemet.cs" t="Include" />
           <e p="TrafficLight.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
