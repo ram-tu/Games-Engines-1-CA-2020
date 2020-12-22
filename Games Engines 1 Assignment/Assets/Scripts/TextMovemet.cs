@@ -23,15 +23,17 @@ public class TextMovemet : MonoBehaviour
             if (!character.isVisible)
             {
                 continue;
+                
             }
 
-            var verts = textInfo.meshInfo[character.materialReferenceIndex].vertices;
+            Vector3[] verts = textInfo.meshInfo[character.materialReferenceIndex].vertices;
             for (int j = 0; j < 4; j++)
             {
-                var orig = verts[character.vertexIndex + j];
+                Vector3 orig = verts[character.vertexIndex + j];
                 verts[character.vertexIndex + j] =
                     orig + new Vector3(0, Mathf.Sin(Time.time * 2f + orig.x * 0.01f) * 10, 0);
-                
+                    
+
             }
             
         }
