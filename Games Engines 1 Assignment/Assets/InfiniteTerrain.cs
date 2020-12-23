@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Text;
 public class InfiniteTerrain : MonoBehaviour
 {
     public GameObject tilePrefab1,
@@ -19,26 +19,29 @@ public class InfiniteTerrain : MonoBehaviour
 
     private int[,] mapGrid;
     private int fullTile;
+    public int width, height;
+    private int Hwidth, Hheight;
     void Start()
     {
 
 
-        fullTile = halfTile * 2;
+        Hheight = height / 2;
+        Hwidth = width / 2;
         if (player == null)
         {
             player = Camera.main.transform;
         }
-        CreateStreet();
+        CreateNoise();
         StartCoroutine(GenerateWorldAroundPlayer());
 
     }
     
-    void CreateStreet()
+    void CreateNoise()
     {
-        mapGrid = new int[fullTile,fullTile];
-        for (int h = 0; h < fullTile; h++)
+        mapGrid = new int[width,height];
+        for (int h = 0; h < height; h++)
         {
-            for (int w = 0; w < fullTile; w++)
+            for (int w = 0; w < width; w++)
             {
                 mapGrid[w, h] = (int) (Mathf.PerlinNoise(w / 10.0f , h / 10.0f ) * 10);
             }
@@ -46,19 +49,19 @@ public class InfiniteTerrain : MonoBehaviour
         int x = 0;
         for (int n = 0; n < 50; n++)
         {
-            for (int h = 0; h < fullTile; h++)
+            for (int h = 0; h < height; h++)
             {
                 mapGrid[x, h] = -1;
             }
 
             x += Random.Range(3, 3);
-            if(x >= fullTile) break;
+            if(x >= width) break;
         }
         
         int z = 0;
         for (int n = 0; n < 10; n++)
         {
-            for (int w = 0; w < fullTile; w++)
+            for (int w = 0; w < width; w++)
             {
                 if (mapGrid[w, z] == -1)
                     mapGrid[w, z] = -3;
@@ -67,7 +70,7 @@ public class InfiniteTerrain : MonoBehaviour
             }
 
             z += Random.Range(3, 10);
-            if (z >= fullTile) break;
+            if (z >= height) break;
         }
     }
 
@@ -96,6 +99,18 @@ public class InfiniteTerrain : MonoBehaviour
             }
             if (Mathf.Abs(xMove) >= quadsPerTile|| Mathf.Abs(zMove) >= quadsPerTile)
             {
+                Debug.Log("Noise from Grid");
+                StringBuilder sb = new StringBuilder();
+                for(int i=0; i< mapGrid .GetLength(1); i++)
+                {
+                    for(int j=0; j<mapGrid .GetLength(0); j++)
+                    {
+                        sb.Append(mapGrid [i,j]);
+                        sb.Append(' ');				   
+                    }
+                    sb.AppendLine();
+                }
+                Debug.Log(sb.ToString());
                 float updateTime = Time.realtimeSinceStartup;
                 
                 
@@ -105,9 +120,10 @@ public class InfiniteTerrain : MonoBehaviour
                 int playerZ = (int)(Mathf.Floor((player.transform.position.z) / (quadsPerTile)) * quadsPerTile);
                 List<Vector3> newTiles = new List<Vector3>();
                 List<int> tileNoise = new List<int>();
-                for (int i = 0, x = -halfTile; x < halfTile; x++)
+
+                for (int i = 0, x = -Hwidth; x < Hwidth; x++)
                 {
-                    for (int j = 0, z = -halfTile; z < halfTile; z++)
+                    for (int j = 0, z = -Hheight; z < Hheight; z++)
                     {
                         int noise = mapGrid[i,j];
                         Vector3 pos = new Vector3((x * quadsPerTile + playerX),
@@ -123,15 +139,23 @@ public class InfiniteTerrain : MonoBehaviour
                         {
                             (tiles[tilename] as Tile).creationTime = updateTime;
                         }
-                        Debug.Log("j is"+ j);
                         j++;
                     }
-                    Debug.Log("i is  " + i);
                     i++;
                 }
                 // Sort in order of distance from the player
-                newTiles.Sort((a, b) => (int)Vector3.SqrMagnitude(player.transform.position - a) - (int)Vector3.SqrMagnitude(player.transform.position - b));
+                //newTiles.Sort((a, b) => (int)Vector3.SqrMagnitude(player.transform.position - a) - (int)Vector3.SqrMagnitude(player.transform.position - b));
                 int noiseIndex = 0;
+                Debug.Log("Noise from Index");
+                StringBuilder nb = new StringBuilder();
+                for(int i=0; i<  tileNoise.Count; i++)
+                {
+                    nb.Append(newTiles[i] + "->" + tileNoise[i]);
+                    nb.Append(' ');				   
+                    
+                    nb.AppendLine();
+                }
+                Debug.Log(nb.ToString());
                 foreach (Vector3 pos in newTiles)
                 {
                     GameObject t;
