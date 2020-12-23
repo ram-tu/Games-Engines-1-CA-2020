@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InfiniteTerrain : MonoBehaviour {
-    public GameObject tilePrefab1,tilePrefab2,tilePrefab3;
+public class InfiniteTerrain : MonoBehaviour
+{
+    public GameObject tilePrefab1,
+        tilePrefab2,
+        tilePrefab3,tilePrefab4,
+        tilePrefab5,
+        tilePrefab6,tilePrefab7,
+        tilePrefab8;
     public Transform player;
     public int quadsPerTile;
 
@@ -22,7 +28,7 @@ public class InfiniteTerrain : MonoBehaviour {
         {
             player = Camera.main.transform;
         }
-
+        CreateStreet();
         StartCoroutine(GenerateWorldAroundPlayer());
 
     }
@@ -92,7 +98,7 @@ public class InfiniteTerrain : MonoBehaviour {
             {
                 float updateTime = Time.realtimeSinceStartup;
                 
-                CreateStreet();
+                
 
                 //force integer position and round to nearest tilesize
                 int playerX = (int)(Mathf.Floor((player.transform.position.x) / (quadsPerTile)) * quadsPerTile);
@@ -140,7 +146,7 @@ public class InfiniteTerrain : MonoBehaviour {
                     }
                     else if (tileNoise[noiseIndex] < -1)
                     {
-                        t = GameObject.Instantiate<GameObject>(tilePrefab2, pos, Quaternion.identity);
+                        t = GameObject.Instantiate<GameObject>(tilePrefab2, pos, tilePrefab2.transform.rotation);
                         t.transform.parent = this.transform;
                         string tilename = "Tile_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
                         t.name = tilename;
@@ -156,7 +162,51 @@ public class InfiniteTerrain : MonoBehaviour {
                         Tile tile = new Tile(t, updateTime);
                         tiles[tilename] = tile;
                     }
-                    
+                    else if (tileNoise[noiseIndex] < 2)
+                    { 
+                        t = GameObject.Instantiate<GameObject>(tilePrefab4, pos, Quaternion.identity);
+                        t.transform.parent = this.transform;
+                        string tilename = "Tile_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                        t.name = tilename;
+                        Tile tile = new Tile(t, updateTime);
+                        tiles[tilename] = tile;
+                    }
+                    else if (tileNoise[noiseIndex] < 4)
+                    { 
+                        t = GameObject.Instantiate<GameObject>(tilePrefab5, pos, Quaternion.identity);
+                        t.transform.parent = this.transform;
+                        string tilename = "Tile_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                        t.name = tilename;
+                        Tile tile = new Tile(t, updateTime);
+                        tiles[tilename] = tile;
+                    }
+                    else if (tileNoise[noiseIndex] < 6)
+                    { 
+                        t = GameObject.Instantiate<GameObject>(tilePrefab6, pos, Quaternion.identity);
+                        t.transform.parent = this.transform;
+                        string tilename = "Tile_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                        t.name = tilename;
+                        Tile tile = new Tile(t, updateTime);
+                        tiles[tilename] = tile;
+                    }
+                    else if (tileNoise[noiseIndex] < 8)
+                    { 
+                        t = GameObject.Instantiate<GameObject>(tilePrefab7, pos, Quaternion.identity);
+                        t.transform.parent = this.transform;
+                        string tilename = "Tile_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                        t.name = tilename;
+                        Tile tile = new Tile(t, updateTime);
+                        tiles[tilename] = tile;
+                    }
+                    else if (tileNoise[noiseIndex] < 10)
+                    { 
+                        t = GameObject.Instantiate<GameObject>(tilePrefab8, pos, Quaternion.identity);
+                        t.transform.parent = this.transform;
+                        string tilename = "Tile_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                        t.name = tilename;
+                        Tile tile = new Tile(t, updateTime);
+                        tiles[tilename] = tile;
+                    }
                     noiseIndex++;
                     yield return null;
                 }
