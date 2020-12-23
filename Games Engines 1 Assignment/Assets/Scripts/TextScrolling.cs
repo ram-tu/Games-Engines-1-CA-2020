@@ -47,7 +47,7 @@ public class TextScrolling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(scrollPos % width);
+ 
         textTransform.localPosition = new Vector3(scrollPos,textTransform.localPosition.y,0);
         if (scrollPos > width)
         {

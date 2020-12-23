@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.WSA;
+using Random = UnityEngine.Random;
 
 public class CityGenerator : MonoBehaviour
 {
@@ -15,11 +17,11 @@ public class CityGenerator : MonoBehaviour
     private Vector3 startPos;
     
 
-    private List<GameObject> cityObjects;
+   
     int halfWidth;
     private Dictionary<string, CityObj> cityObj;
     private int halfHeight;
-    List<CityObj> oldObjects =new List<CityObj>();
+    Queue<GameObject> oldObjects =new Queue<GameObject>();
 
    
     
@@ -30,7 +32,7 @@ public class CityGenerator : MonoBehaviour
         halfHeight = height / 2;
         halfWidth = width / 2;
 
-        cityObjects = new List<GameObject>();
+   
         startPos = Vector3.zero;
         transform.position = startPos;
         //float randomize = Random.Range(20, 100);
@@ -102,146 +104,210 @@ public class CityGenerator : MonoBehaviour
        
         int xMove = int.MaxValue;
         int zMove = int.MaxValue;
-
         while (true)
         {
-            //if (oldObjects.Count > 0)
-            //{
-            // Destroy(oldObjects.Dequeue());
-
-            //}
-
+            
+            
             if (oldObjects.Count > 0)
             {
-                foreach (CityObj obj in oldObjects)
-                {
-                    Destroy(obj.prefab);
-                }
-                
+                Destroy(oldObjects.Dequeue());
             }
-            
 
-            if (Mathf.Abs(xMove) >= area || Mathf.Abs(zMove) >= area)
+          
+
+            if (Mathf.Abs(xMove) >= buildingSpacing || Mathf.Abs(zMove) >= buildingSpacing)
             {
                 float updateTime = Time.realtimeSinceStartup;
-                int playerX = (int) (Mathf.Floor(player.transform.position.x / area) * area);
-                int playerZ = (int) (Mathf.Floor(player.transform.position.z / area) * area);
+                int playerX = (int) (Mathf.Floor(player.transform.position.x / buildingSpacing) * buildingSpacing);
+                int playerZ = (int) (Mathf.Floor(player.transform.position.z / buildingSpacing) * buildingSpacing);
                 
                 //CreateStreet();
                 cityObj = new Dictionary<string, CityObj>();
+                List<int>newCities = new List<int>();
+                List<Vector3>positions = new List<Vector3>();
                 for (int i = 0,w = -halfWidth; w < halfWidth ; w++)
                 {
-                for (int j = 0,h = -halfHeight; h < halfHeight; h++)
-                {
-                    
-                    int choice = 100;
-                    int noise = mapGrid[i, j];
-                    //int noise = (int) (Mathf.PerlinNoise(w /10.0f + randomize, h /10.0f + randomize) * 10);
-                    Vector3 pos = new Vector3(playerX+(w * buildingSpacing),0, playerZ+(h * buildingSpacing));
-                    if (noise < -2)
-                    {    
-                    string tilename = "Road" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
-                    GameObject crossRoads = Instantiate(crossRoad, new Vector3(pos.x,-0.499f,pos.z), Quaternion.identity).gameObject;
-                    crossRoads.name = tilename;
-                    CityObj obj = new CityObj(updateTime,crossRoads,crossRoads.transform.position,Quaternion.identity);
-                    cityObjects.Add(crossRoads);
-                    //cityObj.Add(tilename,obj);
-                    if (!cityObj.ContainsKey(tilename))
+                    for (int j = 0,h = -halfHeight; h < halfHeight; h++)
                     {
-                        cityObj.Add(tilename,obj);
-                    }
                     
-                }
-                else if (noise < -1)
-                {
-                    string tilename = "Road" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
-                  
-                    GameObject roadbacks = Instantiate(roadBack, new Vector3(pos.x,-0.499f,pos.z), roadBack.transform.rotation).gameObject;
-                    roadbacks.name = tilename;
-                    CityObj obj = new CityObj(updateTime,roadbacks,roadbacks.transform.position,roadBack.transform.rotation);
+                        int choice = 100;
+                        int noise = mapGrid[i, j];
+                        Vector3 pos = new Vector3(playerX+(w * buildingSpacing),0, playerZ+(h * buildingSpacing));
+                        if (noise < -2)
+                        {    
+                          
+                            string tilename = "Road" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                            if (!cityObj.ContainsKey(tilename))
+                            {
+                                
+                                newCities.Add(noise);
+                                positions.Add(pos);
+                            }
+                            else
+                            {
+                                (cityObj[tilename] as CityObj).creationTime = updateTime;
+                            }
+                        }
+                        else if (noise < -1)
+                        {
+                           
+                           
+                            string tilename = "Road" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                            
+                            if (!cityObj.ContainsKey(tilename))
+                            {
+                                newCities.Add(noise);
+                                positions.Add(pos);
+                            }
+                            else
+                            {
+                                (cityObj[tilename] as CityObj).creationTime = updateTime;
+                            }
                    
+                        }
+                        else if (noise < 0)
+                        {
+                            
+                            
+                            string tilename = "Road" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                   
+                            if (!cityObj.ContainsKey(tilename))
+                            {
+                                newCities.Add(noise);
+                                positions.Add(pos);
+                            }
+                            else
+                            {
+                                (cityObj[tilename] as CityObj).creationTime = updateTime;
+                            }
                     
-                    cityObjects.Add(roadbacks);
-                   
-                    if (!cityObj.ContainsKey(tilename))
-                    {
-                        cityObj.Add(tilename,obj);
+                        }
+                        else if (noise < 2)
+                        {
+                             choice = 0;
+                        }
+                        else if (noise < 4)
+                        {
+                            choice = 1;
+                        }
+                        else if (noise < 6)
+                        {    
+                            choice = 2;
+                        }
+                        else if (noise < 8)
+                        {
+                            choice = 3;
+                        }
+                        else if (noise < 10)
+                        {
+                            choice = 4;
+                        }
+                        if (choice < 10)
+                        {
+                           
+                            string tilename = "Road" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                            if (!cityObj.ContainsKey(tilename))
+                            {
+                                newCities.Add(noise);
+                                positions.Add(pos);
+                            }
+                            else
+                            {
+                                (cityObj[tilename] as CityObj).creationTime = updateTime;
+                            }
+                           
+                        }
+                        j++;
                     }
-                   
+                    i++;
                 }
-                else if (noise < 0)
+                int posI = 0;
+               
+                foreach (int noise in newCities)
                 {
-                    string tilename = "Road" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
-                    GameObject roadfronts = Instantiate(roadFront, new Vector3(pos.x,-0.499f,pos.z), Quaternion.identity).gameObject;
-                    cityObjects.Add(roadfronts);
-                    roadfronts.name = tilename;
-                    CityObj obj = new CityObj(updateTime,roadfronts,roadfronts.transform.position,Quaternion.identity);
-                    //cityObj[tilename] = obj;
-                   
-                    if (!cityObj.ContainsKey(tilename))
-                    {
-                        cityObj.Add(tilename,obj);
-                    }
+                        
+                        int choice = 100;
+                        Vector3 pos = positions[posI];
                     
+                        if (noise < -2)
+                        {    
+                            string tilename = "Road" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                            GameObject crossRoads = Instantiate(crossRoad, new Vector3(pos.x,-0.499f,pos.z), Quaternion.identity).gameObject;
+                            crossRoads.name = tilename;
+                            CityObj obj = new CityObj(updateTime,crossRoads,crossRoads.transform.position,Quaternion.identity);
+                            cityObj[tilename] = obj;
+                        }
+                        else if (noise < -1)
+                        {
+                           string tilename = "Road" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                           GameObject roadbacks = Instantiate(roadBack, new Vector3(pos.x,-0.499f,pos.z), roadBack.transform.rotation).gameObject;
+                           roadbacks.name = tilename;
+                           CityObj obj = new CityObj(updateTime,roadbacks,roadbacks.transform.position,roadBack.transform.rotation);
+                           cityObj[tilename] = obj;
+
+                        }
+                        else if (noise < 0)
+                        {
+                            string tilename = "Road" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                            GameObject roadfronts = Instantiate(roadFront, new Vector3(pos.x,-0.499f,pos.z), Quaternion.identity).gameObject;
+                           
+                            roadfronts.name = tilename;
+                            CityObj obj = new CityObj(updateTime,roadfronts,roadfronts.transform.position,Quaternion.identity);
+                            cityObj[tilename] = obj;
+                        }
+                        else if (noise < 2)
+                        {
+                             choice = 0;
+                        }
+                        else if (noise < 4)
+                        {
+                            choice = 1;
+                        }
+                        else if (noise < 6)
+                        {    
+                            choice = 2;
+                        }
+                        else if (noise < 8)
+                        {
+                            choice = 3;
+                        }
+                        else if (noise < 10)
+                        {
+                            choice = 4;
+                        }
+                        if (choice < 10)
+                        {
+                            string tilename = "Road" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                            GameObject building = Instantiate(buildings[choice], pos, Quaternion.identity).gameObject;
+                     
+                            building.name = tilename;
+                            CityObj obj = new CityObj(updateTime,building,pos,Quaternion.identity);
+                            cityObj[tilename] = obj;
+                        }
+
+                        posI++;
                 }
-                else if (noise < 2)
-                {
-                    choice = 0;
-                }
-                else if (noise < 4)
-                {
-                    choice = 1;
-                }
-                else if (noise < 6)
-                {    
-                    choice = 2;
-                }
-                else if (noise < 8)
-                {
-                    choice = 3;
-                }
-                else if (noise < 10)
-                {
-                    choice = 4;
-                }
-                if (choice < 10)
-                {
-                    string tilename = "Building" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
-                    GameObject building = Instantiate(buildings[choice], pos, Quaternion.identity).gameObject;
-                    cityObjects.Add(building);
-                    building.name = tilename;
-                    CityObj newBuilding = new CityObj(updateTime,building,pos,Quaternion.identity);
-                    if (!cityObj.ContainsKey(tilename))
-                    {
-                        cityObj.Add(tilename,newBuilding);
-                    }
-                }
-                j++;
-             }
-             i++;
-            }
           
               
-            Dictionary<string,CityObj>newObjects = new Dictionary<string, CityObj>();
-            foreach (CityObj obj in cityObj.Values)
-            {
-                if (obj.creationTime != updateTime)
+                Dictionary<string,CityObj>newObjects = new Dictionary<string, CityObj>();
+                foreach (CityObj obj in cityObj.Values)
                 {
+                   
+                    if (obj.creationTime != updateTime)
+                    {
                     
-                    oldObjects.Add(obj);
-                    obj.prefab.AddComponent<Renderer>();
-                    obj.prefab.GetComponent<Renderer>().material.color = Color.green; 
+                        oldObjects.Enqueue(obj.prefab);
+                        Debug.Log("Added in " + obj.prefab.name);
+                    }
+                    else
+                    { 
+                        newObjects[obj.prefab.name] = obj;
+                    }
                 }
-                else
-                {
-                    
-                    newObjects[obj.prefab.name] = obj;
-                }
-            }
 
                 
-            cityObj = newObjects;
-            startPos = player.transform.position;
+                cityObj = newObjects;
+                startPos = player.transform.position;
               
             }
             yield return null;
@@ -250,5 +316,8 @@ public class CityGenerator : MonoBehaviour
              zMove = (int)(player.transform.position.z - startPos.z);
             
         }
+
+      
     }
+    
 }

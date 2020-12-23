@@ -260,6 +260,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI Car
       objectReference: {fileID: 0}
+    - target: {fileID: 7436614686325832929, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7436614686325832734, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee, type: 3}
     - {fileID: 3632103675528757742, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee, type: 3}
@@ -397,6 +402,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AI Car (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436614686325832929, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7436614686325832734, guid: de7a53ea7920fb24b9ae7a2c9f46a2ee, type: 3}
