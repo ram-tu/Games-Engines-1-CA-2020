@@ -24,6 +24,7 @@
           <e p="TextScrolling.cs" t="Include" />
           <e p="TrafficLight.cs" t="Include" />
         </e>
+        <e p="SphereMaker.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">
             <e p="Fonts" t="Include">
