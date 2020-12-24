@@ -58,6 +58,7 @@ public class Boid : MonoBehaviour
             target.transform.position = transform.TransformPoint(new Vector3(Random.Range(-area,area),0,Random.Range(-area,area)));
             GetComponent<Renderer>().material.color = 
                 Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1);
+            GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
             //GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
             //main.startColor = Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1);
             yield return new WaitForSeconds(timeChange);
