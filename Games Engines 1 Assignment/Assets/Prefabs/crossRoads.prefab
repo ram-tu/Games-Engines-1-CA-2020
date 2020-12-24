@@ -106,8 +106,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.0684357, y: 2.9482913, z: 12.214066}
-  m_Center: {x: -2.0342178, y: -0.9741456, z: -5.607033}
+  m_Size: {x: 5.0684357, y: 2.9482913, z: 2.8053207}
+  m_Center: {x: -2.0342178, y: -0.9741456, z: -11.855007}
 --- !u!54 &4251194253515962816
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -193,8 +193,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5826416, y: 3.7782707, z: 12.927612}
-  m_Center: {x: -2.221634, y: -1.3891354, z: -5.963806}
+  m_Size: {x: 4.5826416, y: 3.7782707, z: 3.2389374}
+  m_Center: {x: -2.221634, y: -1.3891354, z: -11.939766}
 --- !u!1 &6635000387726003243
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +332,11 @@ PrefabInstance:
       propertyPath: startingLight
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7790268828767432899, guid: 44a6eea523ea81549a5c87cba3281ecc,
+        type: 3}
+      propertyPath: timeFrame
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7221534166594418119, guid: 44a6eea523ea81549a5c87cba3281ecc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 44a6eea523ea81549a5c87cba3281ecc, type: 3}
@@ -449,6 +454,11 @@ PrefabInstance:
       propertyPath: startingLight
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7790268828767432899, guid: 44a6eea523ea81549a5c87cba3281ecc,
+        type: 3}
+      propertyPath: timeFrame
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7221534166594418119, guid: 44a6eea523ea81549a5c87cba3281ecc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 44a6eea523ea81549a5c87cba3281ecc, type: 3}
@@ -560,6 +570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790268828767432899, guid: 44a6eea523ea81549a5c87cba3281ecc,
+        type: 3}
+      propertyPath: timeFrame
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7221534166594418119, guid: 44a6eea523ea81549a5c87cba3281ecc, type: 3}
@@ -692,6 +707,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790268828767432899, guid: 44a6eea523ea81549a5c87cba3281ecc,
+        type: 3}
+      propertyPath: timeFrame
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7221534166594418119, guid: 44a6eea523ea81549a5c87cba3281ecc, type: 3}

@@ -90,6 +90,6 @@ public class AudioAnalyzer : MonoBehaviour
         audioSource.GetOutputData(waves, 0);
         getAmplitude();
         GetFrequencyBands();
-        Debug.Log(spectrum);
+        
     }
 }

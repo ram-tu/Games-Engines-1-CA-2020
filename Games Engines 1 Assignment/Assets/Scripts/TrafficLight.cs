@@ -11,6 +11,8 @@ public class TrafficLight : MonoBehaviour
     public int timeFrame;
     public bool redlight;
     public int startingLight;
+
+    public int indicator;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,17 +40,21 @@ public class TrafficLight : MonoBehaviour
         while (true)
         {
             
+            
+            lights[(startingLight) % 3].GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+            lights[(startingLight + 1) % 3].GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            startingLight++;
+            indicator = startingLight % 3;
             if (startingLight % 3 == 0)
             {
                 redlight = true;
+              
             }
             else
             {
                 redlight = false;
+              
             }
-            lights[(startingLight) % 3].GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
-            lights[(startingLight + 1) % 3].GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-            startingLight++;
             yield return new WaitForSeconds(timeFrame);
         }
     }

@@ -22,7 +22,7 @@ public class AudioViz : MonoBehaviour
             cube.transform.SetPositionAndRotation(p, Quaternion.identity);
             cube.transform.parent = this.transform;
             cube.GetComponent<Renderer>().material.color = Color.HSVToRGB(
-                i / (float)10
+                i / (float)15
                 , 1
                 , 1
             );
@@ -54,8 +54,8 @@ public class AudioViz : MonoBehaviour
     {
         for (int i = 0; i < objects.Count; i++)
         {
-            objects[i].transform.localScale = new Vector3(60,100 + (AudioAnalyzer.spectrum[i]*50) * scale,60);
-            Debug.Log(AudioAnalyzer.spectrum[i]);
+            objects[i].transform.localScale = new Vector3(60,150 + (AudioAnalyzer.spectrum[i]*100) * scale,60);
+   
         }
     }
 }

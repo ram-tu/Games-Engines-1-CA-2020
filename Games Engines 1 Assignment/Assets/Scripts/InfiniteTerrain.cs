@@ -146,7 +146,7 @@ public class InfiniteTerrain : MonoBehaviour
                 // Sort in order of distance from the player
                 //newTiles.Sort((a, b) => (int)Vector3.SqrMagnitude(player.transform.position - a) - (int)Vector3.SqrMagnitude(player.transform.position - b));
                 int noiseIndex = 0;
-                Debug.Log("Noise from Index");
+               
                 StringBuilder nb = new StringBuilder();
                 for(int i=0; i<  tileNoise.Count; i++)
                 {

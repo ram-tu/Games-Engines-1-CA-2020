@@ -49,6 +49,21 @@ public class CarLights : MonoBehaviour
             }
            
         }
+        if (other.gameObject.CompareTag("Side") && !front)
+        {
+            if (other.gameObject.GetComponent<TrafficLight>().redlight)
+            {
+                car.speed = 0;
+                car.message = "front light";
+                trafficlight = other.gameObject;
+            }
+            else if(other.gameObject.GetComponent<TrafficLight>().redlight == false)
+            {
+                car.speed = car.currentSpeed;
+                trafficlight = null;
+            }
+           
+        }
         
 
         
