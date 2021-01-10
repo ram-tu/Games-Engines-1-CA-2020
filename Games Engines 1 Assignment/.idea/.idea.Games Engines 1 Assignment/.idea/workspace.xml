@@ -21,24 +21,15 @@
   <component name="ChangeListManager">
     <list default="true" id="e11cdc51-f8cf-4942-a26a-266896167e07" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Games Engines 1 Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Games Engines 1 Assignment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Disco.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Disco.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Disco.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Disco.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Shader.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Shader.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Sun 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Sun 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AI Car.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AI Car.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/crossRoads.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/crossRoads.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/New Material 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/New Material 1.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/disco2 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/disco2 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AudioAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AudioAnalyzer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AudioViz.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AudioViz.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CarLights.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CarLights.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InfiniteTerrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InfiniteTerrain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TrafficLight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TrafficLight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/EditorSnapSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/EditorSnapSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +129,7 @@
       <workItem from="1607716256846" duration="5077000" />
       <workItem from="1608288102290" duration="5597000" />
       <workItem from="1608453412305" duration="9367000" />
-      <workItem from="1608627755024" duration="39908000" />
+      <workItem from="1608627755024" duration="41764000" />
     </task>
     <servers />
   </component>
